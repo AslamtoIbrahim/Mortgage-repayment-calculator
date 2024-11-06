@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Karla:ital,wght@0,200..800;1,200..800&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+  <main class="container">
+    <div class="card">
+
+      <div class="input_section">
+        <form action="">
+          <div class="head">
+            <p>Mortgage Calculator</p>
+            <button id="resetEverthing" type="reset">Clear All</button>
+          </div>
+          <label for="mortgageAmount">
+            Mortgage Amount
+            <div class="mortgage_amount inptus"><span>£</span><input class="fields" oninput="formatNumber(this)" type="text" id="mortgageAmount"></div>
+            <p id="mortgageAmountError" class="error">here goes error message</p>
+          </label>
+          <div class="mortage_intrest">
+            <label for="mortgageTerm">
+              Mortgage Term
+              <div class="mortgage_term inptus"><input class="fields" type="text" id="mortgageTerm"><span>Years</span></div>
+              <p id="mortgageTermError" class="error">here goes error message</p>
+            </label>
+            <label for="interestRate">
+              Interest Rate
+              <div class="interest_rate inptus"><input class="fields" type="text" id="interestRate"><span>%</span></div>
+              <p id="interestRateError" class="error">here goes error message</p>
+            </label>
+          </div>
+          <label for="mortgageType" class="mortgageType">
+            Mortgage Type
+            <input id="repayment" class="radio" type="radio" name="mortgageType" value="repayment"></input>
+            <label tabindex="0" class="fields" for="repayment"><span><span></span></span> Repayment</label>
+            <input id="interest_only" class="radio" type="radio" name="mortgageType" value="interestOnly"></input>
+            <label tabindex="0" class="fields" for="interest_only"><span><span></span></span> Interest Only</label>
+            <p id="mortgageTypeError" class="error">here goes error message</p>
+          </label>
+          <button id="calculate" class="calculate fields" type="button"><img src="assets/images/icon-calculator.svg" alt="">Calculate Repayments</button>
+        </form>
+      </div>
+      <div class="output_section">
+        <!-- Empty results start -->
+        <div id="emptyResult" class="empty_result">
+          <img src="assets/images/illustration-empty.svg" alt="">
+          <p class="title_empty">Results shown here</p>
+          <p class="instructional_empty">
+            Complete the form and click “calculate repayments” to see what
+            your monthly repayments would be.
+          </p>
+        </div>
+        <!-- Empty results end -->
+        <!-- Completed results start -->
+        <div id="completedResult" class="completed_result">
+          <p class="title_result">Your results</p>
+          <p class="instructional_result">
+            Your results are shown below based on the information you provided.
+            To adjust the results, edit the form and click “calculate repayments” again.
+          </p>
+          <div class="repayments_total">
+            <p>Your monthly repayments</p>
+            <p id="resultRepayments" class="repayments">£1,797.74</p>
+            <hr>
+            <p>Total you'll repay over the term</p>
+            <p id="resultTotalPaid" class="total">£537,322.94</p>
+          </div>
+        </div>
+        <!-- Completed results end -->
+      </div>
+    </div>
+  </main>
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+
+  <script src="script.js"></script>
+</body>
+
+</html>

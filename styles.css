@@ -1,0 +1,506 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+colors {
+    color: hsl(202, 86%, 94%);
+    color: hsl(203, 41%, 72%);
+    color: hsl(200, 26%, 54%);
+    color: hsl(200, 24%, 40%);
+    color: hsl(202, 55%, 16%)
+}
+
+html,
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: hsl(202, 86%, 94%);
+
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: #fff;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.input_section {
+    padding: 1.5rem;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.head p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: hsl(202, 55%, 16%);
+}
+
+.head button {
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    color: hsl(200, 24%, 40%);
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-align: end;
+    padding: 0;
+}
+
+label {
+    display: block;
+    color: hsl(200, 24%, 40%);
+    font-weight: 500;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"] {
+    display: block;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    font-weight: 700;
+    color: hsl(202, 55%, 16%);
+}
+
+.inptus {
+    display: flex;
+    align-items: center;
+    background-color: hsl(202, 86%, 94%);
+    border: 1px solid hsl(200, 26%, 54%);
+    border-radius: 0.2rem;
+    margin-top: 0.5rem;
+}
+
+.inptus:focus-within,
+.radio:focus-within {
+    border: 1px solid hsl(61, 70%, 52%);
+
+}
+
+.inptus span {
+    color: hsl(200, 24%, 40%);
+    font-weight: 700;
+    padding: 0 0.7rem;
+}
+
+.mortage_intrest {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+
+input[type="radio"] {
+    display: none;
+}
+
+.mortgageType label {
+    font-weight: 800;
+    color: hsl(202, 55%, 16%);
+    border: 1px solid hsl(200, 26%, 54%);
+    border-radius: 0.1rem;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    margin-bottom: 0rem;
+    display: flex;
+    align-items: center;
+}
+
+.mortgageType label:focus {
+    border: 1px solid hsl(61, 70%, 52%);
+    outline: none;
+}
+
+
+.mortgageType label>span {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid hsl(200, 24%, 40%);
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    position: relative;
+}
+
+.mortgageType label>span>span {
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border: 2px solid hsl(0, 0%, 100%);
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type="radio"]:checked+label {
+    background-color: hsl(61, 92%, 90%);
+    border: 1px solid hsl(61, 70%, 52%);
+}
+
+input[type="radio"]:checked+label>span {
+    background-color: hsl(61, 70%, 52%);
+    border: 1px solid hsl(61, 70%, 52%);
+}
+
+.error {
+    color: red;
+    margin-top: 0.2rem;
+    margin-left: 0.2rem;
+    visibility: hidden;
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+
+.error.warrnings {
+    animation: shake 0.2s ease-in-out;
+}
+
+@keyframes shake {
+
+    0%,
+    50%,
+    100% {
+        color: rgb(170, 130, 160);
+        transform: translateX(0px);
+    }
+
+    25% {
+        color: hsl(0, 62%, 41%);
+        transform: translateX(-8px);
+    }
+
+    75% {
+        color: hsl(59, 80%, 45%);
+        transform: translateX(8px);
+    }
+
+}
+
+.calculate {
+    color: hsl(202, 55%, 16%);
+    /* font-size: 1rem; */
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    padding: 0.6rem 2rem;
+    background-color: hsl(61, 70%, 52%);
+    border-radius: 2rem;
+}
+
+.calculate:focus {
+    border: 1px solid hsl(202, 55%, 16%);
+    outline: none;
+}
+
+.calculate:hover {
+    background-color: hsl(61, 91%, 38%);
+    cursor: pointer;
+}
+
+.output_section {
+    background-color: hsl(202, 55%, 16%);
+    border-bottom-left-radius: 3rem;
+    padding: 1.5rem;
+}
+
+.empty_result {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* display: none; */
+}
+
+.title_empty {
+    font-size: 1.3rem;
+    color: hsl(202, 86%, 94%);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.instructional_empty {
+    color: hsl(203, 41%, 72%);
+    font-size: 0.8rem;
+}
+
+
+.completed_result {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 0;
+    display: none;
+}
+
+.title_result {
+    font-size: 1.3rem;
+    color: hsl(202, 86%, 94%);
+    font-weight: 500;
+}
+
+.instructional_result {
+    color: hsl(203, 41%, 72%);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+
+}
+
+.repayments_total {
+    background-color: rgb(14 36 49);
+    margin-top: 1rem;
+    color: hsl(203, 41%, 72%);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    position: relative;
+}
+
+.repayments_total::before {
+    content: "";
+    width: 100%;
+    height: 30px;
+    background-color: hsl(61, 70%, 52%);
+    position: absolute;
+    top: -4px;
+    left: 0;
+    z-index: -1;
+    border-radius: 1rem;
+}
+
+.repayments {
+    color: hsl(61, 70%, 52%);
+    margin-top: 1rem;
+    font-size: 4rem;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-top: 1px solid hsl(200, 24%, 40%);
+}
+
+.total {
+    color: hsl(202, 86%, 94%);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+
+@media screen and (max-width: 875px) {
+    .card {
+        width: 50rem;
+    }
+
+    .repayments {
+        font-size: 3rem;
+    }
+
+    .total {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .card {
+        width: 45rem;
+    }
+
+    .repayments {
+        font-size: 2.8rem;
+        margin-top: 0.4rem;
+    }
+
+    .total {
+        font-size: 1.6rem;
+    }
+
+    .repayments_total {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .card {
+        width: 40rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: 30rem;
+        grid-template-columns: 1fr;
+    }
+
+    .repayments {
+        font-size: 3.5rem;
+    }
+
+    .total {
+        font-size: 2rem;
+    }
+
+    .repayments_total {
+        margin-top: 2rem;
+    }
+
+    .output_section {
+        border-bottom-left-radius: 0rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .card {
+        width: 23rem;
+    }
+
+    .repayments {
+        font-size: 2.5rem;
+    }
+
+    .total {
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .repayments_total {
+        margin-top: 1.5rem;
+    }
+
+    .output_section {
+        border-bottom-left-radius: 0rem;
+    }
+
+    .instructional_result {
+        margin-top: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .card {
+        width: 100%;
+        height: 100%;
+        border-radius: 0rem;
+    }
+
+    .repayments {
+        font-size: 2.5rem;
+    }
+
+    .total {
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .repayments_total {
+        margin-top: 1.5rem;
+    }
+
+    .output_section {
+        border-bottom-left-radius: 0rem;
+    }
+
+    .instructional_result {
+        margin-top: 0.5rem;
+    }
+
+    .input_section {
+        padding-bottom: 0rem;
+    }
+
+    .calculate {
+        justify-content: center;
+        margin: 0 auto;
+        padding: 0.6rem 3rem;
+    }
+
+    .output_section {
+        margin-top: 0rem;
+    }
+}
+
+@media screen and (max-width: 323px) {
+    
+    .head {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .repayments {
+        font-size: 2rem;
+    }
+
+    .total {
+        font-size: 1.3rem;
+        margin-top: 0.5rem;
+    }
+
+    .repayments_total {
+        margin-top: 1.5rem;
+    }
+
+    .output_section {
+        border-bottom-left-radius: 0rem;
+    }
+
+    .instructional_result {
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .input_section {
+        padding-bottom: 0rem;
+    }
+
+    .calculate {
+        justify-content: center;
+        padding: 0.5rem 2rem;
+    }
+
+    .output_section {
+        margin-top: 0rem;
+    }
+
+    .repayments_total {
+        font-size: 0.8rem;
+    }
+}
